@@ -1,5 +1,20 @@
-require 'yaml'
-require 'fileutils'
+# The Fish shell stores history entries in YAML format as follows:
+# - cmd: <command text>
+#   when: <timestamp>
+
+# For example:
+# - cmd: ls
+#   when: 1625256723
+
+# The Zsh shell, on the other hand, requires a different format for its history entries:
+# ': <timestamp>:0;<command text>'
+
+# So, the script converts the Fish format:
+# - cmd: ls
+#   when: 1625256723
+
+# Into the Zsh format:
+# ': 1625256723:0;ls'
 
 class FishToZshHistoryMigrator
   def initialize(fish_history_path = nil, zsh_history_path = nil)

@@ -20,4 +20,6 @@ Example:
 
 ```shell
 ruby migrate.rb ~/my_custom_path/fish_history ~/my_custom_path/zsh_history
+or just to run with default file paths
+ruby migrate.rb
 ```
